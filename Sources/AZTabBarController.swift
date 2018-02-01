@@ -154,7 +154,7 @@ public class AZTabBarController: UIViewController {
     }
 
     /// If the separator line view that is between the buttons container and the primary view container is visable.
-    open var separatorLineHeight:CGFloat = true{
+    open var separatorLineHeight:CGFloat = 0.5 {
         didSet{
             if self.separatorLine != nil {
                 self.separatorLineHeightConstraint.constant = separatorLineHeight
