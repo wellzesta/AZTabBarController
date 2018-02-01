@@ -152,6 +152,15 @@ public class AZTabBarController: UIViewController {
             }
         }
     }
+
+    /// If the separator line view that is between the buttons container and the primary view container is visable.
+    open var separatorLineHeight:CGFloat = true{
+        didSet{
+            if self.separatorLine != nil {
+                self.separatorLineHeightConstraint.constant = separatorLineHeight
+            }
+        }
+    }
     
     /// Change the alpha of the deselected menus that do not have actions set on them to 0.5
     open var highlightsSelectedButton:Bool = false
@@ -1032,7 +1041,7 @@ public class AZTabBarController: UIViewController {
     private func setupSeparatorLine() {
         self.separatorLine.backgroundColor = self.separatorLineColor
         self.separatorLine.isHidden = !self.separatorLineVisible
-        self.separatorLineHeightConstraint.constant = 0.5
+        self.separatorLineHeightConstraint.constant = self.separatorLineHeight
     }
     
     private func moveSelectionIndicator(toIndex index: Int,animated:Bool){
