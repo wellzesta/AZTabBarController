@@ -67,7 +67,7 @@ public class AZTabBarButton: UIButton{
     override public func titleRect(forContentRect contentRect: CGRect) -> CGRect {
         let original = super.titleRect(forContentRect: contentRect)
         let image: CGFloat = self.imageRect(forContentRect: contentRect).minY / 2.0
-        return CGRect(x: 0, y: contentRect.height - original.height - image, width: contentRect.width , height: original.height)
+        return CGRect(x: 0, y: contentRect.height - original.height - image - 10, width: contentRect.width , height: original.height)
     }
     
     override public func imageRect(forContentRect contentRect: CGRect) -> CGRect {
